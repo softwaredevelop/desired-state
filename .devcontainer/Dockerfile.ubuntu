@@ -1,0 +1,23 @@
+ARG VARIANT=latest
+FROM docker.io/library/ubuntu:$VARIANT
+
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+COPY library-scripts/* /tmp/scripts/
+
+RUN \
+    bash /tmp/scripts/common-debian.sh "true"; \
+    bash /tmp/scripts/setup-user-debian.sh "${USERNAME}" "${USER_UID}" "${USER_GID}"; \
+    bash /tmp/scripts/hadolint-debian.sh "2.12.0"; \
+    bash /tmp/scripts/shfmt-debian.sh "3.7.0"; \
+    bash /tmp/scripts/shellcheck-debian.sh "0.9.0"; \
+    bash /tmp/scripts/editorconfig-debian.sh "2.7.2"; \
+    bash /tmp/scripts/bashdb-ubuntu.sh "5.0-1.1.12"; \
+    bash /tmp/scripts/powershell-ubuntu.sh; \
+    apt-get autoremove; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/* /tmp/scripts
