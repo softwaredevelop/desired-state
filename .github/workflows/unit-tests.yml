@@ -9,7 +9,7 @@ on:
       - main
     paths:
       - "cc/**/*_test.go"
-      # - "iac/**/*_test.go"
+      - "iac/**/*_test.go"
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -48,24 +48,24 @@ jobs:
         run: go test -v ./...
         working-directory: cc
 
-  # unit_tests_in_iac:
-  #   name: Unit tests in iac
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
-  #       with:
-  #         fetch-depth: 0
+  unit_tests_in_iac:
+    name: Unit tests in iac
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-  #     - name: Setup Go latest
-  #       uses: actions/setup-go@v5
-  #       with:
-  #         go-version: stable
+      - name: Setup Go latest
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
 
-  #     - name: Download dependencies for iac/plm
-  #       run: go mod download
-  #       working-directory: iac/plm
+      - name: Download dependencies for iac/plm
+        run: go mod download
+        working-directory: iac/plm
 
-  #     - name: Run unit tests on code quality functions in iac/plm
-  #       run: go test -v .
-  #       working-directory: iac/plm
+      - name: Run unit tests on code quality functions in iac/plm
+        run: go test -v ./...
+        working-directory: iac/plm
