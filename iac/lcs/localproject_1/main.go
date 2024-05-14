@@ -87,14 +87,6 @@ func main() {
 			return err
 		}
 
-		_, err = github.NewActionsSecret(ctx, "newActionsSecretDCT", &github.ActionsSecretArgs{
-			Repository: repository.Name,
-			SecretName: pulumi.String("DAGGER_CLOUD_TOKEN"),
-		}, pulumi.Parent(repository), pulumi.Protect(false))
-		if err != nil {
-			return err
-		}
-
 		ctx.Export("repository", repository.Name)
 		ctx.Export("repositoryUrl", repository.HtmlUrl)
 
