@@ -48,4 +48,5 @@ jobs:
           args: go run -v .
           dagger-flags: --debug
           verb: run
+          version: latest
           workdir: cc
