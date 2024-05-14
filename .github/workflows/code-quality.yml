@@ -46,7 +46,6 @@ jobs:
         uses: dagger/dagger-for-github@v5
         with:
           args: go run -v .
-          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
           dagger-flags: --debug
           verb: run
           version: latest
