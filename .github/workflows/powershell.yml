@@ -17,7 +17,7 @@ concurrency:
 jobs:
   skip-duplicate-actions:
     name: Skip Duplicate Actions
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: fkirc/skip-duplicate-actions@master
         with:
