@@ -45,7 +45,7 @@
 
 	"runArgs": [
 		"--userns=keep-id",
-		"--name=ssh-keygen"
+		"--name=desired-state"
 	],
 	"containerUser": "vscode",
 	"postCreateCommand": "bash test/test.sh"
