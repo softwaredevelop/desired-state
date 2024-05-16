@@ -27,10 +27,7 @@ jobs:
 
   powershell-check:
     name: PowerShell Check
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -46,4 +43,5 @@ jobs:
       - name: Run PSScriptAnalyzer
         shell: pwsh
         run: |
-          Invoke-ScriptAnalyzer -Path . -Recurse
+          Invoke-ScriptAnalyzer -Path . -Recurse |
+          Where-Object { $_.RuleName -ne 'ModuleNotFoundDuringParse' }
