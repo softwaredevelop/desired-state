@@ -3,9 +3,10 @@ begin {
 }
 
 process {
+
+    $gocache = go env GOCACHE
     $yesterday = (Get-Date).AddDays(-1)
-    $goBuildCachePath = Join-Path -Path:$HOME -ChildPath:".cache" -AdditionalChildPath:"go-build"
-    Get-ChildItem -Path:$goBuildCachePath -Recurse:$true -File:$true | Where-Object { $_.LastWriteTime -lt $yesterday } | Remove-Item -Force:$true
+    Get-ChildItem -Path $gocache -Recurse -File | Where-Object { $_.LastWriteTime -lt $yesterday } | Remove-Item -Force
     go clean -cache -modcache
     if ($IsLinux) {
         $env:GOCACHE = Join-Path -Path:"/tmp" -ChildPath:"gocache"
