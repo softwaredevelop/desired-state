@@ -82,8 +82,9 @@ begin {
         "Pulumi.Pulumi",
         "RedHat.Podman",
         "rhysd.actionlint"
-        # git config --global credential.helper
-        # git config --global init.defaultBranch
+        # git config --global core.autocrlf false
+        # git config --global credential.helper cache
+        # git config --global init.defaultBranch main
         # git config --global user.email
         # git config --global user.name
         # add to PATH C:\Program Files (x86)\Nmap;
