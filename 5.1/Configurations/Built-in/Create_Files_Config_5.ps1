@@ -44,19 +44,36 @@ function Invoke-DscConfiguration {
     }
 }
 
-Configuration Create_Files_Config_5
-{
-    Import-DscResource -ModuleName:"PSDesiredStateConfiguration"
+Configuration Create_Files_Config_5 {
 
-    Node "localhost" {
-        File "DockerDirectory" {
+    $params = @(
+        @{
+            DestinationPath = Join-Path -Path:@("$env:PUBLIC") -ChildPath:".sandbox"
+            Ensure          = "Present"
+            Name            = "sandboxDirectory"
+            Type            = "Directory"
+        },
+        @{
             DestinationPath = Join-Path -Path:@("$env:ProgramFiles") -ChildPath:"Docker\Docker"
             Ensure          = "Present"
+            Name            = "DockerDirectory"
             Type            = "Directory"
             # add to PATH %ProgramFiles%\Docker\Docker;
             # $dockerPath     = Join-Path -Path:@("$env:ProgramFiles") -ChildPath:"Docker\Docker\docker.exe"
             # $daggerPath     = Join-Path -Path:@("$env:ProgramFiles") -ChildPath:"RedHat\Podman\podman.exe"
             # New-Item -ItemType:SymbolicLink -Path:$dockerPath -Target:$daggerPath
+        }
+    )
+
+    Import-DscResource -ModuleName:"PSDesiredStateConfiguration"
+
+    Node "localhost" {
+        $params | ForEach-Object {
+            File "File_$($_.Name)" {
+                DestinationPath = $_.DestinationPath
+                Ensure          = $_.Ensure
+                Type            = $_.Type
+            }
         }
     }
 }

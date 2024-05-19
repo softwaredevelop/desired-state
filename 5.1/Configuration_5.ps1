@@ -246,6 +246,28 @@ begin {
         }
     }
 
+    function UpdateModuleHelp5 {
+        $moduleNames = @(
+            "Cobalt",
+            "ConfigDefender",
+            "ConfigDefenderPerformance",
+            "DeliveryOptimization",
+            "HostNetworkingService",
+            "PersistentMemory",
+            "Pester",
+            "PSDiagnostics",
+            "PSDscResources",
+            "PSReadline",
+            "StorageBusCache",
+            "WinGet",
+            "ComputerManagementDsc",
+            "gsudoModule",
+            "xPSDesiredStateConfiguration"
+        )
+        $modules = Get-Module -ListAvailable:$true | Where-Object { $_.Name -notin $moduleNames } | ForEach-Object { $_.Name }
+        Update-Help -Module:$modules -UICulture:en-US -Force:$true -Verbose:$true
+    }
+
     Install-PackageProviderIfNotExist -ProviderName:"NuGet"
     Set-PackageSourceTrusted -Name:"nuget.org" -Location:"https://www.nuget.org/api/v2" -ProviderName:"NuGet"
 
@@ -279,6 +301,8 @@ process {
 
     $scriptPath = Join-Path -Path $PSScriptRoot -ChildPath "Scripts\Install_WinGet_Package_5.ps1"
     & $scriptPath
+
+    UpdateModuleHelp5
 }
 
 end {
