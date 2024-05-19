@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  skip-duplicate-actions:
+  skip_duplicate_actions:
     name: Skip Duplicate Actions
     runs-on: ubuntu-latest
     steps:

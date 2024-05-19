@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  skip-duplicate-actions:
+  skip_duplicate_actions:
     name: Skip Duplicate Actions
     runs-on: windows-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
           cancel_others: true
           concurrent_skipping: never
 
-  powershell-check:
+  powershell_check:
     name: PowerShell Check
     runs-on: windows-latest
     steps:
