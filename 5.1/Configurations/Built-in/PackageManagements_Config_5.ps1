@@ -49,12 +49,17 @@ Configuration PackageManagements_Config_5 {
     $params = @(
         @{
             Ensure       = "Present"
-            Name         = "xPSDesiredStateConfiguration"
+            Name         = "ComputerManagementDsc"
             ProviderName = "PowerShellGet"
         },
         @{
             Ensure       = "Present"
-            Name         = "ComputerManagementDsc"
+            Name         = "PSScriptAnalyzer"
+            ProviderName = "PowerShellGet"
+        },
+        @{
+            Ensure       = "Present"
+            Name         = "xPSDesiredStateConfiguration"
             ProviderName = "PowerShellGet"
         }
     )
