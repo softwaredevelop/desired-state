@@ -80,7 +80,8 @@ begin {
         "mvdan.shfmt",
         "Opera.Opera",
         "Pulumi.Pulumi",
-        "RedHat.Podman"
+        "RedHat.Podman",
+        "rhysd.actionlint"
         # git config --global credential.helper
         # git config --global init.defaultBranch
         # git config --global user.email
