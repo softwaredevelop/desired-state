@@ -1,3 +1,3 @@
 # example.ps1
 
-Write-Host "Hello, World!"
+Write-Host "Hello, World !"
