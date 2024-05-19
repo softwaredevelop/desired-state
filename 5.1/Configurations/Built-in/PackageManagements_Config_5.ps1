@@ -66,8 +66,7 @@ Configuration PackageManagements_Config_5 {
 
     Import-DscResource -ModuleName:"PackageManagement" -ModuleVersion:"1.0.0.1"
 
-    Node "localhost"
-    {
+    Node "localhost" {
         $params | ForEach-Object {
             PackageManagement "Package_$($_.Name)" {
                 Ensure       = $_.Ensure
