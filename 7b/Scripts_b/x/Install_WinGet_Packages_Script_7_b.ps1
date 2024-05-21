@@ -61,6 +61,7 @@ begin {
     $packageNames = @(
         "7zip.7zip",
         "DuckDuckGo.DesktopBrowser",
+        "Microsoft.WindowsTerminal",
         "TradingView.TradingViewDesktop"
     )
 }
