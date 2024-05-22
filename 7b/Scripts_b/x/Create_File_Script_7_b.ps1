@@ -132,6 +132,10 @@ begin {
             Type            = "File"
         },
         @{
+            DestinationPath = Join-Path -Path:@("$env:USERPROFILE") -ChildPath:".MEGA"
+            Type            = "Directory"
+        },
+        @{
             DestinationPath = Join-Path -Path:@("$env:USERPROFILE") -ChildPath:".trade"
             Type            = "Directory"
         }
