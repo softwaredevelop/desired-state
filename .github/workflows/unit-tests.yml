@@ -26,28 +26,6 @@ jobs:
           cancel_others: true
           concurrent_skipping: never
 
-  unit_tests_in_cc:
-    name: Unit tests in cc
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Go latest
-        uses: actions/setup-go@v5
-        with:
-          go-version: stable
-
-      - name: Download dependencies for cc
-        run: go mod download
-        working-directory: cc
-
-      - name: Run unit tests on code quality functions in cc
-        run: go test -v ./...
-        working-directory: cc
-
   unit_tests_in_iac:
     name: Unit tests in iac
     runs-on: ubuntu-latest
