@@ -61,6 +61,7 @@ begin {
     $packageNames = @(
         "7zip.7zip",
         "DuckDuckGo.DesktopBrowser",
+        "EditorConfig-Checker.EditorConfig-Checker",
         "gerardog.gsudo",
         "Git.Git",
         "GoLang.Go",
