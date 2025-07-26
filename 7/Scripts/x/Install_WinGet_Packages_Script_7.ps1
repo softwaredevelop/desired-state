@@ -60,29 +60,35 @@ begin {
     # $packageNames.Sources.Packages | ForEach-Object { $_.PackageIdentifier } | Sort-Object -Unique
     $packageNames = @(
         "7zip.7zip",
+        "Anaconda.Miniconda3",
         "DuckDuckGo.DesktopBrowser",
         "EditorConfig-Checker.EditorConfig-Checker",
         "gerardog.gsudo",
         "Git.Git",
         "GoLang.Go",
+        "Google.Chrome.EXE",
         "hadolint.hadolint",
         "Insecure.Nmap",
         "Microsoft.AppInstaller",
+        "Microsoft.DotNet.Runtime.8",
+        "Microsoft.DotNet.SDK.8",
         "Microsoft.Edge",
-        "Microsoft.EdgeWebView2Runtime",
+        "Microsoft.NuGet",
+        "Microsoft.OneDrive",
         "Microsoft.PowerShell",
         "Microsoft.UI.Xaml.2.7",
         "Microsoft.UI.Xaml.2.8",
         "Microsoft.VCLibs.Desktop.14",
-        "Microsoft.VCRedist.2008.x64",
-        "Microsoft.VCRedist.2013.x64",
+        "Microsoft.VCRedist.2008.x86",
+        "Microsoft.VCRedist.2013.x86",
         "Microsoft.VisualStudioCode",
         "Microsoft.WindowsTerminal",
         "mvdan.shfmt",
         "Opera.Opera",
         "Pulumi.Pulumi",
-        "RedHat.Podman",
-        "rhysd.actionlint"
+        "Python.Launcher",
+        "rhysd.actionlint",
+        "TradingView.TradingViewDesktop"
         # git config --global core.autocrlf false
         # git config --global credential.helper cache
         # git config --global init.defaultBranch main
