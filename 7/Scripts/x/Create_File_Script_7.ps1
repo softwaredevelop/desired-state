@@ -137,11 +137,11 @@ begin {
             Type            = "File"
         },
         @{
-            DestinationPath = Join-Path -Path:@("$env:USERPROFILE") -ChildPath:"@vscode" -AdditionalChildPath:@(".projectmanager")
+            DestinationPath = Join-Path -Path:@("$env:USERPROFILE") -ChildPath:"@code" -AdditionalChildPath:@(".projectmanager")
             Type            = "Directory"
         },
         @{
-            DestinationPath = Join-Path -Path:@("$env:USERPROFILE") -ChildPath:"@vscode" -AdditionalChildPath:@(".projectmanager", "projects.json")
+            DestinationPath = Join-Path -Path:@("$env:USERPROFILE") -ChildPath:"@code" -AdditionalChildPath:@(".projectmanager", "projects.json")
             Type            = "File"
         }
     )
