@@ -67,6 +67,7 @@ begin {
         "Git.Git",
         "GoLang.Go",
         "Google.Chrome.EXE",
+        "Google.GoogleDrive",
         "hadolint.hadolint",
         "Insecure.Nmap",
         "Microsoft.AppInstaller",
@@ -95,6 +96,9 @@ begin {
         # git config --global user.email
         # git config --global user.name
         # add to PATH C:\Program Files (x86)\Nmap;
+        # add to PATH C:\Users\%USERNAME%\miniconda3;
+        # add to PATH C:\Users\%USERNAME%\miniconda3\Scripts;
+        # add to PATH C:\Users\%USERNAME%\miniconda3\Library\bin;
     )
 }
 
