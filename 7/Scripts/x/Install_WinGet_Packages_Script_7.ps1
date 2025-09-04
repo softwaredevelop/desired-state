@@ -60,6 +60,7 @@ begin {
     # $packageNames.Sources.Packages | ForEach-Object { $_.PackageIdentifier } | Sort-Object -Unique
     $packageNames = @(
         "7zip.7zip",
+        "ALCpu.CoreTemp",
         "Anaconda.Miniconda3",
         "DuckDuckGo.DesktopBrowser",
         "EditorConfig-Checker.EditorConfig-Checker",
